@@ -7,7 +7,7 @@ This is not a typical PFP generator. Due to the way PublicWorks is designed-- yo
 ## Setup
 * Install node 16+ `https://nodejs.org/en/download/`
 * Clone or use this project as a template `https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template`
-* Open the project folder in a terminal application `cd public-works-no-code-hashlips`
+* Open the project folder in a terminal application `cd public-works-hashlips-pfp-generator`
 * Run `npm install` to install dependencies
 * Run `npm run dev` to launch the dev server and open the url `http://localhost:8080/`
 
