@@ -1,4 +1,4 @@
-import {startCreating} from "./lib/hashlips/main";
+import {startCreating} from "./lib/hashlips/hl-web";
 
 const mapDecimalToWord = (value, lo = 0, hi = 1) => {
     const normal = (value - lo) / (hi - lo);

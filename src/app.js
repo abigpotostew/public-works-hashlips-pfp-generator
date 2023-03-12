@@ -1,6 +1,7 @@
 import * as p5 from 'p5';
 import {generateTraits} from "./traits";
 import {MODE} from "./lib/hashlips/constants/blend_mode";
+import {layersDir} from "./config";
 
 let s = (sk) => {
     const {layers, attributes, traits} = generateTraits(createPrng());
@@ -9,7 +10,9 @@ let s = (sk) => {
     sk.preload = () => {
         console.log('loading layers')
         for (let i = 0; i < layers.length; i++) {
-            layersLoaded[i] = sk.loadImage(`/layers/${encodeURIComponent(layers[i].selectedElement.path)}`);
+            let path = layers[i].path;
+            path = path.replace(layersDir, '/layers')
+            layersLoaded[i] = sk.loadImage(`${encodeURIComponent(path)}`);
         }
         console.log('finished loading layers')
     }
@@ -53,11 +56,17 @@ let s = (sk) => {
         const bg = sk.color(0);
         sk.background(bg)
         for (let layersLoadedElement of layersLoaded) {
+            sk.push()
             if(layersLoadedElement.blend){
                 const blendMode = getBlendMode(layersLoadedElement.blend)
                 blendMode&& sk.blendMode(blendMode)
             }
+            if(layersLoadedElement.opacity) {
+                sk.tint(255, layersLoadedElement.opacity*255); // Display at half opacity
+            }
+
             sk.image(layersLoadedElement, 0, 0, sk.width, sk.height)
+            sk.pop()
         }
 
         setTimeout(() => {

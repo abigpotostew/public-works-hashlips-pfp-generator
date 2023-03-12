@@ -7,6 +7,8 @@ Clone or use this project as a template `https://docs.github.com/en/repositories
 
 Add your layers folder into the `hashlips` directory.
 
+Update the hashlips config in `src/config.js` to match your layers.
+
 Click, touch, or press spacebar to create a new hash.
 
 ## Work Requirements
