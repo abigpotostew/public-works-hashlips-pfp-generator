@@ -6,22 +6,20 @@ import {layersDir} from "./config";
 let s = (sk) => {
     const {layers, attributes, traits} = generateTraits(createPrng());
 
-    let layersLoaded=[]
+    let layersLoaded = []
     sk.preload = () => {
-        console.log('loading layers')
         for (let i = 0; i < layers.length; i++) {
             let path = layers[i].path;
             path = path.replace(layersDir, '/layers')
             layersLoaded[i] = sk.loadImage(`${encodeURIComponent(path)}`);
         }
-        console.log('finished loading layers')
     }
     sk.setup = () => {
         const dimensions = getDimensions();
         sk.createCanvas(...dimensions)
     }
 
-    const getBlendMode=(blend)=>{
+    const getBlendMode = (blend) => {
         switch (blend) {
             case 'ADD':
                 return sk.ADD
@@ -57,12 +55,12 @@ let s = (sk) => {
         sk.background(bg)
         for (let layersLoadedElement of layersLoaded) {
             sk.push()
-            if(layersLoadedElement.blend){
+            if (layersLoadedElement.blend) {
                 const blendMode = getBlendMode(layersLoadedElement.blend)
-                blendMode&& sk.blendMode(blendMode)
+                blendMode && sk.blendMode(blendMode)
             }
-            if(layersLoadedElement.opacity) {
-                sk.tint(255, layersLoadedElement.opacity*255); // Display at half opacity
+            if (layersLoadedElement.opacity) {
+                sk.tint(255, layersLoadedElement.opacity * 255); // Display at half opacity
             }
 
             sk.image(layersLoadedElement, 0, 0, sk.width, sk.height)
@@ -72,9 +70,10 @@ let s = (sk) => {
         setTimeout(() => {
             setProperties(attributes, traits);
             setPreviewReady()
-        },2500)
+        }, 50)
         sk.noLoop()
     }
+
     const getDimensions = () => {
         let desiredHeight = sk.windowHeight
         let desiredWidth = sk.windowHeight;

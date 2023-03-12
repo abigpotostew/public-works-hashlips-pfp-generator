@@ -1,13 +1,15 @@
 # Public Works PFP Generator Template
 
-A hash lips based PFP generator.
+A hash lips based PFP generator for publicworks.art.
 
 ## Usage
 Clone or use this project as a template `https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template`
 
-Add your layers folder into the `hashlips` directory.
+Add your layers folder into the `hashlips` directory, following the nftchef hashlips fork (https://github.com/nftchef/art-engine)
 
 Update the hashlips config in `src/config.js` to match your layers.
+
+Run `npm run dev` to launch the dev mode webapp and open the url `http://localhost:8080/`
 
 Click, touch, or press spacebar to create a new hash.
 
