@@ -2,7 +2,7 @@
 
 A fork of `nftchef hashlips` PFP generator for publicworks.art.
 
-This is not a typical PFP generator. Due to the way PublicWorks is designed-- you cannot ensure uniqueness in your PFP set. You also cannot ensure ultra rare NFTs are
+This is not a typical PFP generator. Due to the way PublicWorks is designed-- you cannot ensure uniqueness in your PFP set. You also cannot enforce ultra rare NFTs will be minted. Instead, you need to ensure that there's a sufficiently large enough amount of randomness in your layers that the same PFP is statistically unlikely to be generated twice.
 
 ## Setup
 * Install node 16+ `https://nodejs.org/en/download/`
