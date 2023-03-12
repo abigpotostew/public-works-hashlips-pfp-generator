@@ -8,10 +8,16 @@ let s = (sk) => {
 
     let layersLoaded = []
     sk.preload = () => {
+
         for (let i = 0; i < layers.length; i++) {
             let path = layers[i].path;
-            path = path.replace(layersDir, '/layers')
-            layersLoaded[i] = sk.loadImage(`${encodeURIComponent(path)}`);
+            path = path.replace(layersDir, 'layers')
+            console.log('loading image', path);
+            path = path.replaceAll('#', '%23');
+            const mockbase = 'https://example.com/'
+            const url = new URL(path, mockbase).href.replace(mockbase, '')
+            console.log('formatted url:',url)
+            layersLoaded[i] = sk.loadImage(url)
         }
     }
     sk.setup = () => {

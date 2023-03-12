@@ -644,7 +644,8 @@ export const startCreating =  (prng) => {
     const configToSelect = layerConfigurations.map((layerConfig, index) => [index, layerConfig.growEditionSizeTo])
     const configToCreateidx = prng.randomWeighted(new Map(configToSelect));//layerConfigurations[];
 
-
+const asdas=configToCreateidx+2;
+    console.log(asdas)
     //grab random config using growEditionSizeTo for weight
     while (layerConfigIndex < layerConfigurations.length) {
 

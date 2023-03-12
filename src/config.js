@@ -159,6 +159,8 @@ const preview_gif = {
   imageName: "preview.gif",
 };
 
+const devMode = true
+
 module.exports = {
   background,
   baseUri,
@@ -183,4 +185,5 @@ module.exports = {
   traitValueOverrides,
   uniqueDnaTorrance,
   useRootTraitType,
+  devMode
 };

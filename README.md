@@ -1,21 +1,29 @@
 # Public Works PFP Generator Template
 
-A hash lips based PFP generator for publicworks.art.
+A fork of `nftchef hashlips` PFP generator for publicworks.art.
 
-## Usage
-Clone or use this project as a template `https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template`
+This is not a typical PFP generator. Due to the way PublicWorks is designed-- you cannot ensure uniqueness in your PFP set. You also cannot ensure ultra rare NFTs are
 
-Add your layers folder into the `hashlips` directory, following the nftchef hashlips fork (https://github.com/nftchef/art-engine)
+## Setup
+* Install node 16+ `https://nodejs.org/en/download/`
+* Clone or use this project as a template `https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template`
+* Open the project folder in a terminal application `cd public-works-no-code-hashlips`
+* Run `npm install` to install dependencies
+* Run `npm run dev` to launch the dev server and open the url `http://localhost:8080/`
 
-Update the hashlips config in `src/config.js` to match your layers.
+## Configuration
+* Add your `layers` folder into the `hashlips` directory, following the nftchef hashlips fork (https://github.com/nftchef/art-engine) file layout
+* Update the hashlips config in `src/config.js` to match your layers.
+* Whenever you update config or layers, you must restart the dev server to see changes.
+* Click, touch, or press spacebar to create a new hash.
 
-Run `npm run dev` to launch the dev mode webapp and open the url `http://localhost:8080/`
+## Deployment
+When you're satisfied with testing you can test the project out on PublicWorks.
+* Turn off `devMode` in `src/config.js` by setting `const devMode = false;`
+* Run `npm run build` to build the project.A zip file in `dist-zipped/project.zip` is created.
+* Create a work on `testnet.publicworks.art/create` and upload this as your work code.
+* Follow the remaining docs on `testnet.publicworks.art/docs` to public your work.
 
-Click, touch, or press spacebar to create a new hash.
 
-## Work Requirements
-* Your work must be self-contained-- any external calls will be blocked during the preview rendering pipeline.
-* Your work must set `window.previewReady = true` when the preview is complete. Otherwise, a snapshot will be taken after 60 seconds.
-* Attributes and traits must be a javascript object where keys are the attribute names and values one of `string`, `number` or `boolean`. Any other type will be serialized with `.toString()`.
 
 
