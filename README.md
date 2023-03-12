@@ -20,9 +20,9 @@ This is not a typical PFP generator. Due to the way PublicWorks is designed-- yo
 ## Deployment
 When you're satisfied with testing you can test the project out on PublicWorks.
 * Turn off `devMode` in `src/config.js` by setting `const devMode = false;`
-* Run `npm run build` to build the project.A zip file in `dist-zipped/project.zip` is created.
+* Run `npm run build` to build the project. A zip file is created `dist-zipped/project.zip`.
 * Create a work on `testnet.publicworks.art/create` and upload this as your work code.
-* Follow the remaining docs on `testnet.publicworks.art/docs` to public your work.
+* Follow the remaining docs on `testnet.publicworks.art/docs` to publish your work.
 
 
 
